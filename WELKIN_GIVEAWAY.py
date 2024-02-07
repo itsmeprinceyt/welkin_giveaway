@@ -1,5 +1,6 @@
 import random
 import time
+from playsound import playsound
 def div():
     print("********************************")
 div()
@@ -13,7 +14,7 @@ print("ALL THE MEMBERS HAVE BEEN REGISTERED!")
 div()
 for i in range(20,0,-1):
     print(f"RAFFLE STARTING IN {i} second!")
-    time.sleep(2)
+    #time.sleep(2)
 div()
 print("ENTERED USERS ARE THE FOLLOWING...(=^.^=)")
 div()
@@ -33,6 +34,7 @@ while True:
     time.sleep(5)
     number=random.randint(0,len(Participants)-1)
     print(f"🤡Program🤡: !p poku {Participants[number]} 🔪")
+    playsound('poku.mp3')
     counter+=1
     Participants.pop(number)
     if len(Participants)==1:
@@ -43,4 +45,5 @@ div()
 for i in Participants:
     print(f"🥳Congratulations! 🥳Winner of the Welkin is🥳 >>>>>>{i}<<<<<<")
     print("Please Message me your UID in Discord! Thank you everyone for participating!")
+    playsound('Winner.mp3')
 div()
