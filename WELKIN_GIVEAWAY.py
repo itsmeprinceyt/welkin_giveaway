@@ -7,7 +7,7 @@ div()
 print("WELKIN GIVEAWAY")
 div()
 Participants=list()
-while (Users := input("Enter Participant's Name: ")) != "gg":
+while (Users := input("Enter Participant's Name[Type \"gg\" to start]: ")) != "gg":
     Participants.append(Users)
 div()
 print("ALL THE MEMBERS HAVE BEEN REGISTERED!")
@@ -26,16 +26,18 @@ String3=String2.lower()
 if String3=="yes":
     pass
 div()
-counter=1
+counter=len(Participants)
 while True:
     print("")
-    print(counter)
-    print(f"😇Program😇: Thinking who should I kick....")
-    time.sleep(5)
+    for i in range(7):
+        time.sleep(1)
+        print(f"{7-i} seconds for next roll! ")
+    print("\n")
+    print(f"{counter} Participants Left | 🥸Program🔪: Thinking who should I kick....")
     number=random.randint(0,len(Participants)-1)
     print(f"🤡Program🤡: !p poku {Participants[number]} 🔪")
     playsound('poku.mp3')
-    counter+=1
+    counter-=1
     Participants.pop(number)
     if len(Participants)==1:
         break
